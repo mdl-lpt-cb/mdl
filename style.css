@@ -21,6 +21,7 @@ header
 body
 {
 	margin: 25px;
+	font-size: 50px;
 }
 
 footer
@@ -32,9 +33,7 @@ footer
 	padding: 10px;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-	header
-	{
-		flex-direction: column;
-	}
-}
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Réduire la taille de la police */
+  }
