@@ -48,6 +48,18 @@ footer
 	
 }
 
+.logo-lycee
+{
+	text-align: left;
+	height: 80px;
+}
+
+.logo-mdl
+{
+	text-align: right;
+	height: 110px;
+}
+
 
 body
 {
