@@ -1,4 +1,4 @@
-@media screen and (max-witdh: 767px)
+@media screen (max-witdh: 767px)
 {
 	header
 {
@@ -40,7 +40,7 @@ footer
 
 
 
-@media screen and (min-witdh: 1024px)
+@media screen (min-witdh: 1024px)
 {
 	header
 {
