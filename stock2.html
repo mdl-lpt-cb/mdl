@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gestion de stock</title>
+</head>
+<body>
+
+<h1>Gestion de stock</h1>
+
+<label for="nom">Nom du produit :</label>
+<input type="text" id="nom"><br><br>
+
+<label for="quantite">Quantité :</label>
+<input type="number" id="quantite"><br><br>
+
+<button onclick="ajouterProduit()">Ajouter produit</button>
+
+<h2>Liste des produits</h2>
+<ul id="listeProduits">
+</ul>
+
+<script>
+function ajouterProduit() {
+  var nom = document.getElementById("nom").value;
+  var quantite = document.getElementById("quantite").value;
+
+  if (nom == "" || quantite == "") {
+    alert("Veuillez remplir tous les champs.");
+    return;
+  }
+
+  var produit = {
+    nom: nom,
+    quantite: quantite
+  };
+
+  var produits = JSON.parse(localStorage.getItem("produits")) || [];
+  produits.push(produit);
+  localStorage.setItem("produits", JSON.stringify(produits));
+
+  afficherProduits();
+}
+
+function afficherProduits() {
+  var listeProduits = document.getElementById("listeProduits");
+  listeProduits.innerHTML = "";
+
+  var produits = JSON.parse(localStorage.getItem("produits")) || [];
+  for (var i = 0; i < produits.length; i++) {
+    var produit = produits[i];
+    var li = document.createElement("li");
+    li.textContent = produit.nom + " : " + produit.quantite;
+    listeProduits.appendChild(li);
+  }
+}
+
+afficherProduits();
+</script>
+
+</body>
+</html>
